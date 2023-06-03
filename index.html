@@ -1,59 +1,62 @@
-<title>fucksociety</title>
-<audio id="bgm" src="content/music/closer.mp3" loop></audio>
-<body>
+<head>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"></script>
+    <link rel="stylesheet" href="styling/css/index.css">
+    <title>fucksociety</title>
+    </head>
+    <body>
+    <audio id="bgm" src="content/music/closer.mp3" loop></audio>
+    <div class="nav" style="display: none;">
+        <!--<a href="/" target="_blank">
+          <img src="/content/imgs/society.jpg" alt="fucksocietyscript.github.io" class="navLogo">
+      </a>-->
+      <ul class="navLinks">
+          <div class="navLinkContainer"><a class="navLink" href="https://en.neverlose.cc/market/item?id=zS6GZJ" target="_blank">neverlose</a></div>
+          <div class="navLinkContainer"><a class="navLink" href="https://discord.gg/YpduSpDN3f" target="_blank">rifk7</a></div>
+          <div class="navLinkContainer"><a class="navLink" href="https://www.youtube.com/@romancewastaken/videos" target="_blank">media</a></div>
+          <div class="navLinkContainer"><a class="navLink" href="https://discord.gg/YpduSpDN3f" target="_blank">discord</a></div>
+      </ul>
+  </div>
+
+  <section id="hero">
+      <video src="/content/videos/society.mp4" class="heroBinaryBG" autoplay="" loop=""></video>
+      <!--<video src="/content/videos/binary.m4v" class="heroBinaryBG" autoplay="" loop=""></video>-->
+      <!--<video src="/content/videos/particles.m4v" class="heroParticlesBG" autoplay="" loop=""></video>-->
+
+      <!--
+                  <div style="height: 100%; width: 100%;"><div style="position: relative; width: 100%; height: 100%; overflow: hidden; pointer-events: auto;">
+          <div style="width: 100%; height: 100%;"><canvas style="display: block; width: 2560px; height: 500px;" data-engine="three.js r149" width="3840" height="750">
+          </canvas></div></div></div><div class="heroGradientFG"></div>
+          <div class="heroText"><p class="heroTitle fucksociety">fucksociety</p><p class="heroTitle lua">.lua</div>
+      -->
+      </section>
+</body>
+
     <div class="overlay">
         <div class="center">
         press anywhere to enter
     </div>
-    <div class="nav">
-          <!--        <a href="/" target="_blank">
-            <img src="/content/imgs/society.jpg" alt="fucksocietyscript.github.io" class="navLogo">
-        </a>-->
-        <ul class="navLinks">
-            <div class="navLinkContainer"><a class="navLink" href="https://en.neverlose.cc/market/item?id=zS6GZJ" target="_blank">neverlose</a></div>
-            <div class="navLinkContainer"><a class="navLink" href="https://discord.gg/YpduSpDN3f" target="_blank">rifk7</a></div>
-            <div class="navLinkContainer"><a class="navLink" href="https://www.youtube.com/@romancewastaken/videos" target="_blank">media</a></div>
-            <div class="navLinkContainer"><a class="navLink" href="https://discord.gg/YpduSpDN3f" target="_blank">discord</a></div>
-        </ul>
-    </div>
-
-    <section id="hero">
-        <video src="/content/videos/society.mp4" class="heroBinaryBG" autoplay="" loop=""></video>
-        <!--<video src="/content/videos/binary.m4v" class="heroBinaryBG" autoplay="" loop=""></video>-->
-        <!--<video src="/content/videos/particles.m4v" class="heroParticlesBG" autoplay="" loop=""></video>-->
-
-        <!--
-                    <div style="height: 100%; width: 100%;"><div style="position: relative; width: 100%; height: 100%; overflow: hidden; pointer-events: auto;">
-            <div style="width: 100%; height: 100%;"><canvas style="display: block; width: 2560px; height: 500px;" data-engine="three.js r149" width="3840" height="750">
-            </canvas></div></div></div><div class="heroGradientFG"></div>
-            <div class="heroText"><p class="heroTitle fucksociety">fucksociety</p><p class="heroTitle lua">.lua</div>
-        -->
-        </section>
-</body>
-
-<link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Rajdhani:600" rel="stylesheet">
-<link href="/styling/css/index.css" rel="stylesheet">
+</div>
 
 <script>
     var initialized = false;
+
     bgm.volume = 1.0;
     var play = () => 
     {
         if (initialized)
-        {
             return;
-        }
         bgm.play().then(() => 
-        {
+        {;
             $(".overlay").addClass("hidden");
+            $(".nav").removeAttr("style");
             initialized = true;
         });
     };
-    play();
-
     window.onclick = () => 
     {
         play();
     }
 </script>
+</body>
