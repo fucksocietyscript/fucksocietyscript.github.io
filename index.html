@@ -5,7 +5,6 @@
         <div class="center">
         press anywhere to enter
     </div>
-</div>
     <div class="nav">
           <!--        <a href="/" target="_blank">
             <img src="/content/imgs/society.jpg" alt="fucksocietyscript.github.io" class="navLogo">
@@ -29,6 +28,7 @@
             </canvas></div></div></div><div class="heroGradientFG"></div>
             <div class="heroText"><p class="heroTitle fucksociety">fucksociety</p><p class="heroTitle lua">.lua</div>
         -->
+        </section>
 </body>
 
 <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
@@ -36,13 +36,20 @@
 <link href="/styling/css/index.css" rel="stylesheet">
 
 <script>
-var play = () => 
-{
-    bgm.play().then(() => 
+    var initialized = false;
+    bgm.volume = 1.0;
+    var play = () => 
     {
-        $(".overlay").addClass("hidden");
-    });
-};
+        if (initialized)
+        {
+            return;
+        }
+        bgm.play().then(() => 
+        {
+            $(".overlay").addClass("hidden");
+            initialized = true;
+        });
+    };
     play();
 
     window.onclick = () => 
