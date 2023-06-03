@@ -1,6 +1,11 @@
 <title>fucksociety</title>
 <audio id="bgm" src="content/music/closer.mp3" loop></audio>
 <body>
+    <div class="overlay">
+        <div class="center">
+        press anywhere to enter
+    </div>
+</div>
     <div class="nav">
           <!--        <a href="/" target="_blank">
             <img src="/content/imgs/society.jpg" alt="fucksocietyscript.github.io" class="navLogo">
@@ -30,4 +35,18 @@
 <link href="https://fonts.googleapis.com/css?family=Rajdhani:600" rel="stylesheet">
 <link href="/styling/css/index.css" rel="stylesheet">
 
-<script>bgm.play()</script>
+<script>
+var play = () => 
+{
+    bgm.play().then(() => 
+    {
+        $(".overlay").addClass("hidden");
+    });
+};
+    play();
+
+    window.onclick = () => 
+    {
+        play();
+    }
+</script>
